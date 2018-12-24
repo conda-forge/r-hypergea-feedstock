@@ -21,8 +21,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}        # [not win and c_compiler != "llvm-openmp"]
+    - {{ compiler('cxx') }}      # [not win and c_compiler != "llvm-openmp"]
+    - llvm-openmp                # [not win and c_compiler == "llvm-openmp"]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
