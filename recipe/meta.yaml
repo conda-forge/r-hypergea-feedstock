@@ -14,6 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
+   skip: True  # [osx and c_compiler == "toolchain_c" or win and vc<14]
   number: 1000
   rpaths:
     - lib/R/lib/
@@ -21,9 +22,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win and c_compiler != "llvm-openmp"]
-    - {{ compiler('cxx') }}      # [not win and c_compiler != "llvm-openmp"]
-    - llvm-openmp                # [not win and c_compiler == "llvm-openmp"]
+    - {{ compiler('c') }}        # [linux]
+    - {{ compiler('cxx') }}      # [linux]
+    - llvm-openmp                # [osx]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
