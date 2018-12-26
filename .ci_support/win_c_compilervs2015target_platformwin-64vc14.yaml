@@ -13,7 +13,14 @@ m2w64_cxx_compiler:
 pin_run_as_build:
   r-base:
     max_pin: x.x.x
+  vc:
+    max_pin: x
 r_base:
 - 3.5.1
 target_platform:
 - win-64
+vc:
+- '14'
+zip_keys:
+- - vc
+  - c_compiler
