@@ -43,19 +43,13 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=hypergea
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Performs (exact) hypergeometric tests on IxJ and 2x2x2 contingency tables using parallelized
     C code.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
-    - dpryan79
